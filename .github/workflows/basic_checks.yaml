@@ -20,7 +20,7 @@ jobs:
       #     python3 -m pip install --upgrade pip
       #     python3 -m pip install mofapy
       #     python3 -m pip install umap-learn
-        uses: actions/checkout@master
+      - uses: actions/checkout@master
       - name: Setup R
         uses: r-lib/actions/setup-R@v1
         with:
