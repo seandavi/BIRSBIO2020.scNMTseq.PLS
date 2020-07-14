@@ -5,7 +5,7 @@ jobs:
     strategy:
       matrix:
         R: ['4.0.0']
-        python-version: [3.7]
+        # python-version: [3.7]
 
     container: bioconductor/bioconductor_docker:RELEASE_3_11
     steps:
@@ -20,9 +20,8 @@ jobs:
       #     python3 -m pip install --upgrade pip
       #     python3 -m pip install mofapy
       #     python3 -m pip install umap-learn
-
-      - name: Setup R
         uses: actions/checkout@master
+      - name: Setup R
         uses: r-lib/actions/setup-R@v1
         with:
           r-version: ${{ matrix.R }}
