@@ -1,3 +1,9 @@
+
+## ----------- Imports -----------
+#' @import MultiAssayExperiment ggplot2 data.table reticulate
+#' @import uwot nipals biomaRt
+#' @import reshape2 grDevices
+
 ## ----------- all_identical -----------
 ## check if elements in a list are identical
 #' @export
