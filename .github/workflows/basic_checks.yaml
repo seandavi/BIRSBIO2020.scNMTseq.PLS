@@ -53,7 +53,10 @@ jobs:
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
-        run: rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "error", check_dir = "check")
+        run: |
+          update.packages(ask=FALSE, checkBuilt=TRUE)
+          install.packages(c("Rcpp"))
+          rcmdcheck::rcmdcheck(args = c("--no-manual"), error_on = "error", check_dir = "check")
         shell: Rscript {0}
 
       - uses: docker/build-push-action@v1
